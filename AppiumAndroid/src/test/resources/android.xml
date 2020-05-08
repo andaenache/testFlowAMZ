@@ -1,0 +1,36 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Amazon Android" verbose="10">
+
+    <!--Application-->
+    <parameter name="appPath" value="app"/>
+    <parameter name="appName" value="Amazon_shopping.apk"/>
+
+    <!--Appium server-->
+    <parameter name="serverUrl" value="http://127.0.0.1:4723/wd/hub"/>
+
+    <!--Device-->
+    <parameter name="device" value="android"/>
+    <parameter name="deviceName" value="emulator-5554"/>
+    <parameter name="platformName" value="android"/>
+    <parameter name="platformVersion" value="9.0"/>
+
+
+    <!--Test Suite-->
+    <test name="tests" preserve-order="true">
+        <!--Test Data-->
+        <parameter name="searchTerm" value="65-inch TV"/>
+        <parameter name="relevantTerm" value="inch "/>
+        <parameter name="email" value=""/>
+        <parameter name="password" value=""/>
+        <parameter name="zipCode" value="90210"/>
+
+        <classes>
+            <class name="scenarios.login.SearchAndAddToCart">
+                <methods>
+                    <!--<include name="exampleIgnoredTestMethodName" />-->
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
